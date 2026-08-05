@@ -1,0 +1,72 @@
+{
+  "synthetic": true,
+  "decision": {
+    "as_of": "2032-09-24T15:10:00Z",
+    "season": 2032,
+    "week": 4,
+    "away_team": "Pine State",
+    "home_team": "Bayview State",
+    "kickoff": "2032-09-25T19:30:00Z",
+    "cfbd_game_id": 990400
+  },
+  "matchup_context": {
+    "analysis_id": "bayview-pine-20320924T150000Z",
+    "price_blind_freeze": {
+      "frozen_at": "2032-09-24T15:00:00Z",
+      "excluded_inputs": ["market prices", "props", "DFS salaries"]
+    },
+    "team_quality_prior": "Pine State has the stronger supplied offensive efficiency; Bayview State has the stronger supplied defense. Samples cover only three games and are not opponent adjusted.",
+    "matchup_factors": [
+      {
+        "factor": "Pine efficiency versus Bayview havoc",
+        "mechanism": "Pine's returning quarterback and coordinator can stay ahead of schedule unless Bayview creates protection errors and short fields.",
+        "evidence_stability": "conditional",
+        "competing_explanation": "Pine's schedule may have inflated its efficiency; no opponent adjustment is supplied.",
+        "falsifier": "Bayview creates pressure or havoc without exposing explosives.",
+        "confidence": "medium-low"
+      }
+    ],
+    "headline_traps": [
+      {
+        "label": "prior-score anchoring",
+        "observation": "Bayview won the prior meeting 45-17, but the teams were nearly even in yards, success, PPA, and scoring opportunities; Pine committed four turnovers and Bayview scored two defensive touchdowns.",
+        "caveat": "The underlying disruption mechanism may remain portable even though the margin is not."
+      },
+      {
+        "label": "record bias",
+        "observation": "Bayview is 3-0 and Pine is 1-2, while Pine has the stronger supplied offensive efficiency.",
+        "caveat": "No opponent adjustment is available."
+      }
+    ],
+    "unknowns": [
+      "Pine starting running back is day-to-day",
+      "Bayview official offensive-line depth chart is unavailable",
+      "No opponent-adjusted current-season baseline is supplied"
+    ]
+  },
+  "market_snapshots": [
+    {
+      "snapshot_id": "examplebook-spread-1",
+      "provider": "ExampleBook",
+      "provider_game_id": "examplebook-2032-44",
+      "market_type": "spread",
+      "observed_at": "2032-09-24T15:08:00Z",
+      "rules": {
+        "period": "full_game",
+        "overtime": "included",
+        "push": "refund",
+        "resolution_source": "synthetic-provider-rules"
+      },
+      "sides": [
+        {"selection": "Bayview State", "line": -6.5, "price_format": "american", "price": -110},
+        {"selection": "Pine State", "line": 6.5, "price_format": "american", "price": -110}
+      ],
+      "execution_status": "synthetically verified"
+    }
+  ],
+  "limitations": [
+    "No reproducible predictive model or evidence-supported numeric fair spread is supplied",
+    "No second time-stamped quote exists, so movement cannot be assessed",
+    "The running-back status can change the Pine offense"
+  ]
+}

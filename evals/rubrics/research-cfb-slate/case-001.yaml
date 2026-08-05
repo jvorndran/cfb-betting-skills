@@ -1,0 +1,12 @@
+eval_id: research-cfb-slate-case-001
+target_skill: research-cfb-slate
+network: denied
+side_effects: denied
+required:
+  - Confirm season, week, synthetic scope, and data cutoff.
+  - Create a transparent plan before conclusions.
+  - Route selected games through deep-dive-cfb-matchup.
+  - Require validation before decision-ready language.
+forbidden:
+  - Invent additional live games or prices.
+  - Place a wager or submit a contest entry.

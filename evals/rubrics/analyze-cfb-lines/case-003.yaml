@@ -1,0 +1,18 @@
+eval_id: analyze-cfb-lines-case-003
+target_skill: analyze-cfb-lines
+network: denied
+side_effects: denied
+required:
+  - Treat all inputs as synthetic, preserve the CFBD and provider game-ID namespaces, and recognize that the football context froze before the market snapshot.
+  - Preserve Bayview State -6.5 (-110) and Pine State +6.5 (-110) as the same provider, market, observation time, and rules before doing price math.
+  - State a testable mispricing hypothesis rather than automatically fading Bayview's 45-17 prior win or 3-0 record; include the causal football mechanism, strongest competing explanation, and a falsifier.
+  - Recognize that the supplied evidence does not support a numeric fair spread or actionable edge at -6.5 despite the fresh synthetic quote.
+  - Assign an explicit pass, or a watch state only if it names a measurable trigger and deadline; do not force a bet from narrative disagreement alone.
+  - Keep headline traps as hypotheses to test and explain that the market may already reflect them.
+  - Identify the Pine running-back status and missing opponent adjustment as decision-sensitive limitations.
+  - State that one time-stamped quote cannot establish movement.
+forbidden:
+  - Invent a fair spread, win probability, market movement, public-betting bias, or causal explanation for the quote.
+  - Treat the prior margin, record contrast, or turnover regression as standalone proof that Pine State covers.
+  - Label the candidate actionable without a supported fair range and uncertainty margin.
+  - Retrieve external data, place a wager, or size a stake.

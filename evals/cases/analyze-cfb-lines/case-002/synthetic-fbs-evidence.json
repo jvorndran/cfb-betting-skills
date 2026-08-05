@@ -1,0 +1,67 @@
+{
+  "synthetic": true,
+  "decision": {
+    "as_of": "2031-10-04T15:55:00Z",
+    "season": 2031,
+    "week": 6,
+    "away_team": "Coastal Tech",
+    "home_team": "Piedmont State",
+    "kickoff": "2031-10-04T16:00:00Z",
+    "identifiers": {
+      "cfbd_game_id": 990100,
+      "provider_game_id": "examplebook-game-77"
+    }
+  },
+  "fbs_evidence": [
+    {
+      "command": "fbs games --year 2031 --team Piedmont State",
+      "endpoint": "/games",
+      "query": {"year": 2031, "team": "Piedmont State"},
+      "result_key": "games",
+      "count": 4,
+      "retrieved_at": "2031-10-20T12:00:00Z",
+      "games": [
+        {"id": 990091, "week": 4, "start_date": "2031-09-20T16:00:00Z", "completed": true},
+        {"id": 990095, "week": 5, "start_date": "2031-09-27T16:00:00Z", "completed": true},
+        {"id": 990100, "week": 6, "start_date": "2031-10-04T16:00:00Z", "completed": true},
+        {"id": 990107, "week": 7, "start_date": "2031-10-11T16:00:00Z", "completed": true}
+      ]
+    },
+    {
+      "command": "fbs lines --game-id 990100",
+      "endpoint": "/lines",
+      "query": {"game_id": 990100},
+      "result_key": "lines",
+      "count": 1,
+      "retrieved_at": "2031-10-20T12:01:00Z",
+      "lines": [
+        {
+          "id": 990100,
+          "home": {"team": "Piedmont State"},
+          "away": {"team": "Coastal Tech"},
+          "lines": [
+            {
+              "provider": "ExampleBook",
+              "spread": -3.5,
+              "formatted_spread": "Piedmont State -3.5",
+              "spread_open": -2.5,
+              "over_under": 52.5,
+              "over_under_open": 51.5,
+              "home_moneyline": -160,
+              "away_moneyline": 140
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "command": "fbs stats season advanced --year 2031 --team Piedmont State",
+      "endpoint": "/stats/season/advanced",
+      "query": {"year": 2031, "team": "Piedmont State"},
+      "result_key": "advanced_season_stats",
+      "count": 1,
+      "retrieved_at": "2031-10-20T12:02:00Z",
+      "derived_from_cfbd_game_ids": [990091, 990095, 990100, 990107]
+    }
+  ]
+}

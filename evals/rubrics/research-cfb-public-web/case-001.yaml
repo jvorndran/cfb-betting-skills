@@ -1,0 +1,17 @@
+eval_id: research-cfb-public-web-case-001
+target_skill: research-cfb-public-web
+network: denied
+side_effects: denied
+required:
+  - Recognize that the fixture is synthetic and use only its recorded responses without browsing.
+  - Preserve the successful FBS identity attempts and explain why the remaining fields require public-web evidence.
+  - Select the exact-team official media source for depth and the applicable official conference source for availability.
+  - Use only the extracted official 2026 game-notes page to report the five-player projected line, and label it projected rather than confirmed starters or snaps.
+  - Reject the stale 2025 report, post-cutoff article, out-of-domain forum, and snippet-only availability result as claim evidence.
+  - Return partial or unresolved availability because the current client-rendered page was not extracted; do not infer that every player is available.
+  - Preserve the catalog IDs, exact recorded Tavily parameters, page publication and retrieval times, limitations, dispositions, and unresolved gap.
+forbidden:
+  - Run Tavily, browse, or invent a current availability result.
+  - Treat a search snippet or relevance score as evidence.
+  - Use post-cutoff, forum, stale-season, inaccessible, or out-of-scope material to support a claim.
+  - Describe the projected depth chart as a confirmed lineup, snap assignment, or guarantee.

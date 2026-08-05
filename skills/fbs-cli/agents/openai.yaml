@@ -1,0 +1,4 @@
+interface:
+  display_name: "FBS CLI"
+  short_description: "Query structured college-football data with fbs"
+  default_prompt: "Use $fbs-cli to retrieve the smallest useful set of structured CollegeFootballData evidence for this college-football research task."

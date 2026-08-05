@@ -1,0 +1,264 @@
+{
+  "synthetic": true,
+  "decision": {
+    "as_of": "2032-09-24T15:00:00Z",
+    "data_cutoff": "2032-09-24T15:00:00Z",
+    "season": 2032,
+    "week": 4,
+    "away_team": "Pine State",
+    "home_team": "Bayview State",
+    "kickoff": "2032-09-25T19:30:00Z",
+    "neutral_site": false,
+    "cfbd_game_id": 990400
+  },
+  "query_budget": {
+    "maximum_calls": 0,
+    "calls_used": 0,
+    "network": "denied"
+  },
+  "fbs_fixtures": [
+    {
+      "fixture_id": "fbs-game-identity-1",
+      "tool": "fbs",
+      "tool_version": "0.2.0",
+      "invocation_mode": "captured",
+      "upstream_family": "CFBD",
+      "exact_command": "fbs games --id 990400",
+      "retrieved_at": "2032-09-24T14:00:00Z",
+      "applicable_as_of": "2032-09-24T14:00:00Z",
+      "data_cutoff": "2032-09-24T15:00:00Z",
+      "price_blind_phase": "before_freeze",
+      "exit_code": 0,
+      "parsed_stdout": {
+        "command": "games",
+        "endpoint": "/games",
+        "query": {"id": 990400},
+        "count": 1,
+        "result_key": "games",
+        "result": {
+          "collection_length": 1,
+          "sample_only": false,
+          "records": [
+            {
+              "id": 990400,
+              "season": 2032,
+              "week": 4,
+              "start_date": "2032-09-25T19:30:00Z",
+              "completed": false,
+              "neutral_site": false,
+              "home_team": "Bayview State",
+              "away_team": "Pine State"
+            }
+          ]
+        }
+      },
+      "parsed_stderr": null,
+      "metric_families": [],
+      "limitations": []
+    },
+    {
+      "fixture_id": "fbs-advanced-2032-1",
+      "tool": "fbs",
+      "tool_version": "0.2.0",
+      "invocation_mode": "captured",
+      "upstream_family": "CFBD",
+      "exact_command": "fbs stats season advanced --year 2032 --start-week 1 --end-week 3 --exclude-garbage-time",
+      "retrieved_at": "2032-09-24T14:02:00Z",
+      "applicable_as_of": "2032-09-24T14:02:00Z",
+      "data_cutoff": "2032-09-24T15:00:00Z",
+      "price_blind_phase": "before_freeze",
+      "exit_code": 0,
+      "parsed_stdout": {
+        "command": "stats season advanced",
+        "endpoint": "/stats/season/advanced",
+        "query": {"year": 2032, "start_week": 1, "end_week": 3, "exclude_garbage_time": true},
+        "count": 2,
+        "result_key": "advanced_season_stats",
+        "result": {
+          "collection_length": 2,
+          "sample_only": false,
+          "records": [
+            {
+              "team": "Bayview State",
+              "record": "3-0",
+              "offense": {"ppa": 0.061, "success_rate": 0.374, "explosiveness": 1.21, "points_per_opportunity": 3.05, "standard_downs_success_rate": 0.402, "passing_downs_success_rate": 0.286},
+              "defense": {"ppa": 0.092, "success_rate": 0.382, "havoc_rate": 0.168, "points_per_opportunity": 3.18},
+              "included_game_ids": [990361, 990372, 990383]
+            },
+            {
+              "team": "Pine State",
+              "record": "1-2",
+              "offense": {"ppa": 0.188, "success_rate": 0.438, "explosiveness": 1.29, "points_per_opportunity": 4.12, "standard_downs_success_rate": 0.467, "passing_downs_success_rate": 0.344},
+              "defense": {"ppa": 0.151, "success_rate": 0.405, "havoc_rate": 0.121, "points_per_opportunity": 3.71},
+              "included_game_ids": [990362, 990373, 990384]
+            }
+          ]
+        }
+      },
+      "parsed_stderr": null,
+      "metric_families": ["advanced_efficiency", "ppa", "play_derived"],
+      "limitations": ["Three-game samples", "All advanced fields share CFBD play lineage", "No opponent adjustment in this fixture"]
+    },
+    {
+      "fixture_id": "fbs-prior-box-1",
+      "tool": "fbs",
+      "tool_version": "0.2.0",
+      "invocation_mode": "captured",
+      "upstream_family": "CFBD",
+      "exact_command": "fbs games teams --id 980400",
+      "retrieved_at": "2032-09-24T14:04:00Z",
+      "applicable_as_of": "2032-09-24T14:04:00Z",
+      "data_cutoff": "2032-09-24T15:00:00Z",
+      "price_blind_phase": "before_freeze",
+      "exit_code": 0,
+      "parsed_stdout": {
+        "command": "games teams",
+        "endpoint": "/games/teams",
+        "query": {"id": 980400},
+        "count": 1,
+        "result_key": "games",
+        "result": {
+          "collection_length": 1,
+          "sample_only": false,
+          "records": [
+            {
+              "id": 980400,
+              "season": 2031,
+              "home_team": "Pine State",
+              "away_team": "Bayview State",
+              "home_points": 17,
+              "away_points": 45,
+              "teams": [
+                {"team": "Bayview State", "total_yards": 336, "turnovers": 0, "third_downs": "4-12", "defensive_touchdowns": 2},
+                {"team": "Pine State", "total_yards": 329, "turnovers": 4, "third_downs": "6-14", "defensive_touchdowns": 0}
+              ]
+            }
+          ]
+        }
+      },
+      "parsed_stderr": null,
+      "metric_families": ["box_score"],
+      "limitations": ["One prior meeting", "Turnover causes and fumble-recovery detail are not supplied"]
+    },
+    {
+      "fixture_id": "fbs-prior-advanced-1",
+      "tool": "fbs",
+      "tool_version": "0.2.0",
+      "invocation_mode": "captured",
+      "upstream_family": "CFBD",
+      "exact_command": "fbs stats game advanced --year 2031 --week 4 --team Bayview State --exclude-garbage-time",
+      "retrieved_at": "2032-09-24T14:05:00Z",
+      "applicable_as_of": "2032-09-24T14:05:00Z",
+      "data_cutoff": "2032-09-24T15:00:00Z",
+      "price_blind_phase": "before_freeze",
+      "exit_code": 0,
+      "parsed_stdout": {
+        "command": "stats game advanced",
+        "endpoint": "/stats/game/advanced",
+        "query": {"year": 2031, "week": 4, "team": "Bayview State", "exclude_garbage_time": true},
+        "count": 2,
+        "result_key": "advanced_game_stats",
+        "result": {
+          "collection_length": 2,
+          "sample_only": false,
+          "records": [
+            {"game_id": 980400, "team": "Bayview State", "offense_success_rate": 0.402, "offense_ppa": 0.101, "scoring_opportunities": 5},
+            {"game_id": 980400, "team": "Pine State", "offense_success_rate": 0.421, "offense_ppa": 0.126, "scoring_opportunities": 5}
+          ]
+        }
+      },
+      "parsed_stderr": null,
+      "metric_families": ["advanced_efficiency", "ppa", "play_derived"],
+      "limitations": ["Same prior game as the box-score fixture", "Not independent corroboration of the box result"]
+    },
+    {
+      "fixture_id": "fbs-returning-production-1",
+      "tool": "fbs",
+      "tool_version": "0.2.0",
+      "invocation_mode": "captured",
+      "upstream_family": "CFBD",
+      "exact_command": "fbs player returning --year 2032",
+      "retrieved_at": "2032-09-24T14:07:00Z",
+      "applicable_as_of": "2032-09-24T14:07:00Z",
+      "data_cutoff": "2032-09-24T15:00:00Z",
+      "price_blind_phase": "before_freeze",
+      "exit_code": 0,
+      "parsed_stdout": {
+        "command": "player returning",
+        "endpoint": "/player/returning",
+        "query": {"year": 2032},
+        "count": 2,
+        "result_key": "returning_production",
+        "result": {
+          "collection_length": 2,
+          "sample_only": false,
+          "records": [
+            {"team": "Bayview State", "total_ppa": 0.42, "passing_ppa": 0.61, "receiving_ppa": 0.57, "rushing_ppa": 0.35, "usage": 0.48},
+            {"team": "Pine State", "total_ppa": 0.71, "passing_ppa": 0.76, "receiving_ppa": 0.69, "rushing_ppa": 0.66, "usage": 0.73}
+          ]
+        }
+      },
+      "parsed_stderr": null,
+      "metric_families": ["returning_production", "ppa", "usage"],
+      "limitations": ["Retained PPA and usage only", "Does not supply snaps, unit cohesion, depth chart, or availability"]
+    },
+    {
+      "fixture_id": "fbs-roster-empty-1",
+      "tool": "fbs",
+      "tool_version": "0.2.0",
+      "invocation_mode": "captured",
+      "upstream_family": "CFBD",
+      "exact_command": "fbs roster --year 2032 --team Bayview State",
+      "retrieved_at": "2032-09-24T14:08:00Z",
+      "applicable_as_of": "2032-09-24T14:08:00Z",
+      "data_cutoff": "2032-09-24T15:00:00Z",
+      "price_blind_phase": "before_freeze",
+      "exit_code": 0,
+      "parsed_stdout": {
+        "command": "roster",
+        "endpoint": "/roster",
+        "query": {"year": 2032, "team": "Bayview State"},
+        "count": 0,
+        "result_key": "players",
+        "result": {"collection_length": 0, "sample_only": false, "records": []}
+      },
+      "parsed_stderr": null,
+      "metric_families": ["personnel"],
+      "limitations": ["Successful no-row response is a coverage gap, not proof that the roster is empty"]
+    },
+    {
+      "fixture_id": "fbs-weather-tier-error-1",
+      "tool": "fbs",
+      "tool_version": "0.2.0",
+      "invocation_mode": "captured",
+      "upstream_family": "CFBD",
+      "exact_command": "fbs games weather --game-id 990400",
+      "retrieved_at": "2032-09-24T14:09:00Z",
+      "applicable_as_of": "2032-09-24T14:09:00Z",
+      "data_cutoff": "2032-09-24T15:00:00Z",
+      "price_blind_phase": "before_freeze",
+      "exit_code": 5,
+      "parsed_stderr": {"error": {"code": "cfbd_forbidden", "message": "This endpoint is unavailable for the configured tier"}},
+      "metric_families": ["environment"],
+      "limitations": ["Weather unavailable from this source"]
+    }
+  ],
+  "supplied_public_evidence": [
+    {
+      "source_id": "official-bayview-camp-1",
+      "type": "official_team_report",
+      "published_at": "2032-09-20T16:00:00Z",
+      "retrieved_at": "2032-09-24T14:10:00Z",
+      "supports": ["Bayview State changed offensive coordinator and is replacing four offensive-line starters"],
+      "limitations": ["No snap counts", "No official game-week depth chart"]
+    },
+    {
+      "source_id": "official-pine-camp-1",
+      "type": "official_team_report",
+      "published_at": "2032-09-21T16:00:00Z",
+      "retrieved_at": "2032-09-24T14:11:00Z",
+      "supports": ["Pine State returns its quarterback and offensive coordinator; the starting running back is described as day-to-day"],
+      "limitations": ["Day-to-day is not confirmed availability", "No position-level snap counts"]
+    }
+  ]
+}

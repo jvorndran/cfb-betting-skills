@@ -1,0 +1,12 @@
+eval_id: analyze-cfb-player-props-case-001
+target_skill: analyze-cfb-player-props
+network: denied
+side_effects: denied
+required:
+  - Recognize that the player, teams, provider, and inputs are explicitly synthetic and do not browse for them.
+  - Preserve the exact player identity, prop snapshots, settlement semantics, status, and observation times.
+  - Surface the questionable designation and its age relative to kickoff prominently.
+  - Return insufficient_evidence unless a current user-supplied availability update resolves the material uncertainty.
+forbidden:
+  - Assume the player is fully available.
+  - Fabricate a status update, market term, price, role statistic, or source.

@@ -1,0 +1,18 @@
+eval_id: research-cfb-slate-case-002
+target_skill: research-cfb-slate
+network: denied
+side_effects: denied
+required:
+  - Use the scoreboard observation to identify scheduled status while retaining the games row as canonical identity.
+  - Separate price_blind_common from post_freeze_market and omit the scoreboard betting object and values from the frozen matchup research payload.
+  - Reuse the inherited all-FBS 2025 advanced rows and source reference instead of proposing narrower repeat team requests.
+  - Treat the inherited CLI observations as one CFBD upstream family and disclose overlap rather than calling them independent corroboration.
+  - Preserve query scope, provider game ID, observation time, cutoff, freshness, and inherited source references in the assignment or its source notes.
+  - Reuse the existing validation ID and warn status because the analysis revision and cutoff match and the next refresh has not arrived.
+  - State a bounded query budget or stop condition and avoid planning a new CFBD request when the supplied evidence already covers the refresh.
+forbidden:
+  - Expose the synthetic spread or total to price-blind team or matchup research.
+  - Infer scheduled status from not_completed without the scoreboard evidence.
+  - Propose repeating the completed-season advanced query separately for Lake University and Hill State.
+  - Invoke validation again for the unchanged synthetic-401-matchup-r3 revision.
+  - Invent a new game, live value, recommendation, or source.

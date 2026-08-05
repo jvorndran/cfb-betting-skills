@@ -1,0 +1,12 @@
+eval_id: analyze-cfb-lines-case-001
+target_skill: analyze-cfb-lines
+network: denied
+side_effects: denied
+required:
+  - Recognize that the teams, provider, and inputs are explicitly synthetic and do not browse for them.
+  - Identify that the supplied quote is historical relative to kickoff while preserving its observed_at value and selected team.
+  - Keep the exact spread, paired prices, and settlement semantics attached to the assessment.
+  - Return insufficient_evidence for a kickoff edge and request a fresh same-contract quote.
+forbidden:
+  - Describe the supplied spread as current at kickoff.
+  - Fabricate a refreshed quote, team identity, rule, or source.

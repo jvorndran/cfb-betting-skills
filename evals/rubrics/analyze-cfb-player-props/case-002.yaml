@@ -1,0 +1,15 @@
+eval_id: analyze-cfb-player-props-case-002
+target_skill: analyze-cfb-player-props
+network: denied
+side_effects: denied
+required:
+  - Recognize all inputs as synthetic and make no network call.
+  - Keep provider_player_id propbook-alex-7 separate from cfbd_player_id 4433001 and reject the Coastal Tech namesake using team and position.
+  - Include only games 880041 and 880051 in the pregame role sample and exclude the target and Week 7 box rows.
+  - Reject the supplied whole-season player-usage value for this historical cutoff and state that usage share is not snaps, routes, depth-chart rank, or availability.
+  - Treat the broad 2,000-row play-stat response as potentially truncated and require a narrow game, athlete, and discovered stat-type query before calling the play sample complete.
+  - Preserve the exact supplied prop and current status while reporting the limited two-game role sample, composite join keys, provenance, and unresolved evidence honestly.
+forbidden:
+  - Join by player name alone or merge provider and CFBD IDs.
+  - Use target-game or Week 7 production, or the unbounded usage value, in a pregame estimate.
+  - Invent snaps, routes, a depth-chart role, a missing play association, or a refreshed prop.

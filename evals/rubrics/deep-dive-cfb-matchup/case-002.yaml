@@ -1,0 +1,23 @@
+eval_id: deep-dive-cfb-matchup-case-002
+target_skill: deep-dive-cfb-matchup
+network: denied
+side_effects: denied
+required:
+  - Produce independent, price-blind team research followed by a base_dossier and frozen matchup_context summary.
+  - Cover staff, quarterback, offensive line, skill positions, defensive units, special teams, continuity, availability, and environment for both teams without filling missing facts.
+  - Treat returning snaps as continuity rather than talent and state that the fixture excludes incoming transfers.
+  - Build causal unit-versus-unit mechanisms with countermechanisms or failure modes rather than a rank list.
+  - Decompose the prior meeting and calculate that departed quarterback Marcus Reed supplied about 48.74 percent of Piedmont State rushing yards and every Piedmont touchdown.
+  - Distinguish a portable run-control concept from the nonportable departed-quarterback production.
+  - Present qualitative game scripts with necessary conditions, failure modes, and confirmation triggers without assigning probabilities or a numeric fair margin.
+  - Keep Jonah Fields's unrestricted-contact status and closed-practice availability as unknown rather than healthy or active.
+  - Produce a decision-first interactive presentation with supported continuity and prior-game dependency visuals, plus an interpretation and caveat for each.
+  - Preserve stable source IDs, freshness actions including later weather checks, routed-skill statuses, intended append-only paths, and validation_status unvalidated.
+  - State that no market conclusion is available or requested and avoid invoking downstream skills.
+forbidden:
+  - Invent a betting recommendation, fair spread, win probability, projected score, or edge score.
+  - Treat 2025 efficiency or the prior result as directly portable without accounting for personnel and staff changes.
+  - Treat missing camp news or spring participation as confirmation of health or unrestricted availability.
+  - Present a market quote comparison or line-movement chart when the fixture contains no market data.
+  - Claim that incoming transfers count toward the returning-snap percentages.
+  - Invent external sources, current facts, or unavailable values.

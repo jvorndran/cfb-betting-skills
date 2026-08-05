@@ -1,0 +1,4 @@
+interface:
+  display_name: "Analyze CFB Player Props"
+  short_description: "Research college football player props"
+  default_prompt: "Use $analyze-cfb-player-props to evaluate this player prop with current evidence and uncertainty."

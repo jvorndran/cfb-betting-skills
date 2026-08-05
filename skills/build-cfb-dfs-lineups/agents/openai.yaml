@@ -1,0 +1,4 @@
+interface:
+  display_name: "Build CFB DFS Lineups"
+  short_description: "Build and audit provider-neutral CFB lineups"
+  default_prompt: "Use $build-cfb-dfs-lineups to create and validate candidate CFB DFS lineups from this slate."

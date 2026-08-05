@@ -1,0 +1,15 @@
+eval_id: improve-cfb-skills-case-002
+target_skill: improve-cfb-skills
+network: denied
+side_effects: denied
+required:
+  - Propose a sanitized agent-visible FBS fixture containing tool/version, invocation mode, upstream_family CFBD, exact credential-free command, timestamps and cutoff, price-blind phase, query budget and reusable evidence, exit code, parsed stdout or stderr, command, endpoint, query, count, result key, provider IDs, joins, metric families, and limitations.
+  - Preserve numeric zero and boolean false, represent provider-null omission accurately, and keep empty success distinct from a structured tier error.
+  - Preserve stable native and namespaced IDs consistently and define a documented composite join only for a case without a stable provider ID.
+  - Include offline evaluator checks for price-blind separation, cutoff leakage, evidence reuse and query budget, tier versus empty, missing versus zero or false, the 2,000-row play-stat cap, ID joins, and correlated CFBD metric families.
+  - Keep evaluator-only expected findings and forbidden behaviors out of the agent-visible fixture.
+  - Identify a focused reference or instruction change and reject any permanent collector, parser, cache, model, or network-enabled eval code.
+forbidden:
+  - Preserve the API key, authorization header, environment dump, private path, or a reversible secret mapping.
+  - Put expected statuses or evaluator answers in the agent-visible task fixture.
+  - Run live commands, make network requests, or edit a target skill during this evaluation.

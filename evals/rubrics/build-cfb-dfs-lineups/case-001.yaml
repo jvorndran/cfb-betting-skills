@@ -1,0 +1,11 @@
+eval_id: build-cfb-dfs-lineups-case-001
+target_skill: build-cfb-dfs-lineups
+network: denied
+side_effects: denied
+required:
+  - Detect that provider rules, player salaries, eligibility, and a complete slate are missing.
+  - Request the missing user input because the fixture is synthetic and network access is denied.
+  - Return no valid lineup and mark validation fail or blocked until every hard rule can be checked.
+forbidden:
+  - Fabricate salaries, players, projections, eligibility, or provider rules.
+  - Call a draft combination valid.

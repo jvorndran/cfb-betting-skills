@@ -1,0 +1,66 @@
+{
+  "synthetic": true,
+  "decision": {
+    "as_of": "2031-10-04T15:55:00Z",
+    "target_cfbd_game_id": 880061,
+    "provider_game_id": "propbook-game-6",
+    "player": {
+      "name": "Alex Example",
+      "team": "Piedmont State",
+      "position": "QB",
+      "cfbd_player_id": "4433001",
+      "provider_player_id": "propbook-alex-7"
+    },
+    "prop": {
+      "provider": "PropBook",
+      "stat_type": "passing_yards",
+      "selection": "over",
+      "line": 249.5,
+      "price": -110,
+      "observed_at": "2031-10-04T15:45:00Z",
+      "availability": "expected"
+    }
+  },
+  "player_search": {
+    "command": "fbs player search --search-term Alex Example --year 2031",
+    "endpoint": "/player/search",
+    "query": {"search_term": "Alex Example", "year": 2031},
+    "result_key": "players",
+    "count": 2,
+    "retrieved_at": "2031-10-04T15:00:00Z",
+    "players": [
+      {"id": "4433001", "name": "Alex Example", "team": "Piedmont State", "position": "QB", "team_stints": [{"team": "Piedmont State", "start_year": 2031}]},
+      {"id": "5533001", "name": "Alex Example", "team": "Coastal Tech", "position": "WR", "team_stints": [{"team": "Coastal Tech", "start_year": 2030}]}
+    ]
+  },
+  "games": [
+    {"id": 880041, "week": 4, "start_date": "2031-09-20T16:00:00Z", "completed": true},
+    {"id": 880051, "week": 5, "start_date": "2031-09-27T16:00:00Z", "completed": true},
+    {"id": 880061, "week": 6, "start_date": "2031-10-04T16:00:00Z", "completed": true},
+    {"id": 880071, "week": 7, "start_date": "2031-10-11T16:00:00Z", "completed": true}
+  ],
+  "player_box_rows": [
+    {"game_id": 880041, "player_id": "4433001", "category": "passing", "stat_type": "YDS", "value": 238},
+    {"game_id": 880051, "player_id": "4433001", "category": "passing", "stat_type": "YDS", "value": 267},
+    {"game_id": 880061, "player_id": "4433001", "category": "passing", "stat_type": "YDS", "value": 312},
+    {"game_id": 880071, "player_id": "4433001", "category": "passing", "stat_type": "YDS", "value": 355}
+  ],
+  "player_usage": {
+    "command": "fbs player usage --year 2031 --player-id 4433001",
+    "endpoint": "/player/usage",
+    "query": {"year": 2031, "player_id": 4433001},
+    "result_key": "player_usage",
+    "count": 1,
+    "retrieved_at": "2031-10-20T12:00:00Z",
+    "derived_from_cfbd_game_ids": [880041, 880051, 880061, 880071],
+    "usage": {"overall": 0.78, "pass": 0.91, "rush": 0.22}
+  },
+  "play_stats": {
+    "command": "fbs plays stats --year 2031 --team Piedmont State",
+    "endpoint": "/plays/stats",
+    "query": {"year": 2031, "team": "Piedmont State"},
+    "result_key": "play_stats",
+    "count": 2000,
+    "retrieved_at": "2031-10-20T12:01:00Z"
+  }
+}
