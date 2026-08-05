@@ -8,7 +8,7 @@ These skills will also be available through [skills.sh](https://skills.sh/jvornd
 
 ### 1. Install the skills
 
-After the repository is published, run this from the project where your agent will use the skills:
+Run this from the project where your agent will use the skills:
 
 ```bash
 npx skills add jvorndran/cfb-betting-skills
