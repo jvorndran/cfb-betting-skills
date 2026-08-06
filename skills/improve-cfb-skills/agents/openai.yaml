@@ -1,4 +1,0 @@
-interface:
-  display_name: "Improve CFB Skills"
-  short_description: "Safely improve CFB skills from feedback"
-  default_prompt: "Use $improve-cfb-skills to turn this approved lesson into a sanitized eval and minimal skill update."

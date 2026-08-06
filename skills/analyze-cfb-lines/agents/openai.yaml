@@ -1,4 +1,4 @@
 interface:
   display_name: "Analyze CFB Lines"
-  short_description: "Evaluate college football market prices"
-  default_prompt: "Use $analyze-cfb-lines to evaluate the current spread, total, and moneyline for this game."
+  short_description: "Analyze CFB lines with price-aware evidence"
+  default_prompt: "Use $analyze-cfb-lines to evaluate this college-football market and conclude with play, pass, or insufficient evidence."

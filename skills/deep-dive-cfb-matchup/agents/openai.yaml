@@ -1,4 +1,0 @@
-interface:
-  display_name: "Individual Matchup Deep Dive"
-  short_description: "Build a rigorous single-game CFB dossier"
-  default_prompt: "Use $deep-dive-cfb-matchup to build an individual, price-blind matchup dossier for Team A versus Team B and ask how I want it visualized."

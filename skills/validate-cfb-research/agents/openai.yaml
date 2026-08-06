@@ -1,4 +1,0 @@
-interface:
-  display_name: "Validate CFB Research"
-  short_description: "Audit CFB research before decisions"
-  default_prompt: "Use $validate-cfb-research to independently audit this CFB research and report pass, warn, or fail."

@@ -1,4 +1,0 @@
-interface:
-  display_name: "Research CFB Slate"
-  short_description: "Coordinate weekly college football research"
-  default_prompt: "Use $research-cfb-slate to build this week's research slate and coordinate matchup deep dives."

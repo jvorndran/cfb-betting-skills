@@ -1,26 +1,30 @@
 # CFB Betting Skills
 
-A collection of reusable agent skills for college-football research, matchup analysis, market evaluation, DFS lineup construction, and evidence validation. The skills coordinate structured [CollegeFootballData](https://collegefootballdata.com/) data, public Kalshi market data, and cited web research without placing bets, submitting lineups, or making trades.
+Five reusable agent skills for college-football data retrieval, market analysis, player props, and DFS. They combine structured [CollegeFootballData](https://collegefootballdata.com/) data, public Kalshi market data, and targeted public-web research without placing bets, trades, or contest entries.
 
-These skills will also be available through [skills.sh](https://skills.sh/jvorndran/cfb-betting-skills), where they can be discovered and installed individually or as a collection.
+Browse the collection on [skills.sh](https://skills.sh/jvorndran/cfb-betting-skills).
 
-## Quick setup
+## Setup
+
+[Node.js](https://nodejs.org/) 22.20 or newer satisfies the current skills installer and both data CLIs.
 
 ### 1. Install the skills
 
-Run this from the project where your agent will use the skills:
+From the project where your agent will use them:
 
 ```bash
 npx skills add jvorndran/cfb-betting-skills
 ```
 
-To install only one skill, add a selector such as `--skill fbs-cli`.
+Install one skill with `--skill`:
 
-The skills installer adds the agent instructions. It does **not** install the command-line tools used to retrieve CFBD and Kalshi data.
+```bash
+npx skills add jvorndran/cfb-betting-skills --skill analyze-cfb-lines
+```
+
+The installer downloads agent instructions and bundled references. It does not install the data CLIs.
 
 ### 2. Install the data CLIs
-
-[Node.js](https://nodejs.org/) 22.12 or newer is required.
 
 ```bash
 npm install --global @jvorndran/fbs-cli @jvorndran/kalshi-cli
@@ -30,65 +34,63 @@ kalshi --version
 
 ### 3. Configure CollegeFootballData
 
-CollegeFootballData requires an API key. [Request a free CFBD key](https://collegefootballdata.com/key), then run this command from the project where you will use the skills:
+CollegeFootballData requires an API key. [Request a CFBD key](https://collegefootballdata.com/key), then run this from the project where the agent will work:
 
 ```bash
 fbs auth
 ```
 
-`fbs auth` accepts the key at a masked prompt, validates it with one `GET /info` request, and saves `CFBD_API_KEY` to a local `.env` file only after validation succeeds. Keep that file out of version control, and never paste the key into an agent prompt, chat, command argument, issue, or log.
+`fbs auth` accepts the key through a masked prompt, validates it with one `GET /info` request, and writes `CFBD_API_KEY` to a `.env` file in the current directory only after validation succeeds. Keep `.env` out of version control. Never paste the key into an agent prompt, chat, command argument, issue, or log.
 
-For environment-based setup instead:
+To use an environment variable instead:
 
 ```bash
-export CFBD_API_KEY="your_key_here" # macOS/Linux
+export CFBD_API_KEY="your_key_here"
 ```
 
 ```powershell
-$env:CFBD_API_KEY = "your_key_here" # PowerShell
+$env:CFBD_API_KEY = "your_key_here"
 ```
 
-An existing environment value takes precedence over the working-directory `.env` file. Each live `fbs` request consumes CFBD quota, so the skills favor narrow queries and reuse provider IDs.
+An existing environment value takes precedence over the current directory's `.env` file. Live `fbs` calls consume CFBD quota.
 
-### 4. Use Kalshi public data: no key needed
+### 4. Use Kalshi public data
 
-The `kalshi` CLI uses Kalshi's public market-data endpoints at `https://external-api.kalshi.com/trade-api/v2`. These supported endpoints require no API key or authentication setup:
+No Kalshi API key or authentication is needed. The `kalshi` CLI exposes only supported public, read-only market-data endpoints:
 
 ```bash
 kalshi series --category Sports --tags Football --include-product-metadata
 ```
 
-The CLI is intentionally read-only and unauthenticated. It does not access accounts, portfolios, orders, or trading endpoints, and it never places a trade.
+It does not access accounts, portfolios, orders, or trading endpoints.
 
-## Included skills
+## Skills
 
 | Skill | Purpose |
 | --- | --- |
-| [`fbs-cli`](skills/fbs-cli/) | Retrieve structured CFBD schedules, rosters, games, plays, statistics, ratings, recruiting, and historical betting data. |
+| [`fbs-cli`](skills/fbs-cli/) | Retrieve schedules, rosters, games, plays, statistics, ratings, recruiting, transfers, and historical betting data from CFBD. |
 | [`kalshi-cli`](skills/kalshi-cli/) | Discover and capture public Kalshi series, events, markets, quotes, orderbooks, trades, and price history. |
-| [`research-cfb-public-web`](skills/research-cfb-public-web/) | Fill evidence gaps with governed, cited public-web research. |
-| [`research-cfb-slate`](skills/research-cfb-slate/) | Discover, prioritize, and coordinate a weekly college-football research slate. |
-| [`deep-dive-cfb-matchup`](skills/deep-dive-cfb-matchup/) | Build a price-blind, source-aware dossier for one matchup. |
-| [`analyze-cfb-lines`](skills/analyze-cfb-lines/) | Evaluate spreads, totals, moneylines, and binary game contracts. |
-| [`analyze-cfb-player-props`](skills/analyze-cfb-player-props/) | Evaluate player markets using verified identity, role, usage, matchup, and price. |
-| [`build-cfb-dfs-lineups`](skills/build-cfb-dfs-lineups/) | Build and validate provider-neutral DFS candidate lineups without submitting entries. |
-| [`validate-cfb-research`](skills/validate-cfb-research/) | Audit freshness, identity, arithmetic, market semantics, evidence overlap, and unsupported claims. |
-| [`improve-cfb-skills`](skills/improve-cfb-skills/) | Turn human-approved lessons into sanitized evaluations and minimal skill updates. |
+| [`analyze-cfb-lines`](skills/analyze-cfb-lines/) | Analyze spreads, totals, moneylines, and compatible binary game contracts. |
+| [`analyze-cfb-player-props`](skills/analyze-cfb-player-props/) | Analyze player markets through identity, role, opportunity, matchup, price, and uncertainty. |
+| [`build-cfb-dfs-lineups`](skills/build-cfb-dfs-lineups/) | Analyze DFS slates and players, and construct validated lineups only when requested. |
 
-## How the collection fits together
+## Data and research approach
 
-The retrieval skills preserve raw source identity and provenance. Research skills turn that evidence into matchup or slate context. Analysis skills evaluate a specific market or DFS problem. `validate-cfb-research` independently checks the result before it informs a decision.
+The analysis skills are flexible playbooks, not workflow engines. They explain which FBS CLI data can answer a question, which facts remain outside CFBD, and common ways betting professionals structure an analysis.
 
-Not every workflow needs every skill. Start with the smallest relevant skill, retrieve only the evidence needed, and preserve the distinction between CFBD IDs, sportsbook/provider IDs, and Kalshi tickers.
+Use structured data for reproducible historical facts. Use current public sources only for material gaps such as availability, depth charts, changing roles, live prices, provider rules, late news, and forecasts. Each analysis skill includes its own copy of [`sources.yaml`](sources.yaml), a curated catalog of official media pages, conference availability reports, player-usage resources, beat reporting, play-by-play, and transfer coverage. The catalog is a starting point, not a freshness guarantee or a requirement to visit every source.
 
-## Safety and scope
+The root catalog is canonical. After editing it, synchronize the bundled copies:
 
-- Research and analysis only: no wagers, trades, deposits, withdrawals, or DFS submissions.
-- CFBD access is read-only; `fbs auth` is the sole credential-writing step.
-- Kalshi access is limited to public, unauthenticated market-data endpoints.
-- Outputs are decision support, not guarantees of accuracy, availability, or profit.
-- Follow provider terms, applicable laws, platform rules, and local age restrictions.
+```bash
+node scripts/sync-sources.mjs
+node scripts/sync-sources.mjs --check
+```
 
-## Evaluation
+## Safety
 
-Offline, synthetic evaluation cases live in [`evals/`](evals/). The fixtures contain no live credentials and are designed to test source handling, identity joins, cutoff discipline, validation, and graceful degradation without consuming provider quota.
+- Research and analysis only; never place or size wagers, execute trades, or submit DFS entries.
+- CFBD endpoint commands are read-only. `fbs auth` is the sole credential-writing step.
+- Kalshi access is public, read-only, and unauthenticated.
+- Treat outputs as decision support, not guarantees of accuracy, availability, or profit.
+- Follow provider terms, applicable laws, platform rules, and age restrictions.

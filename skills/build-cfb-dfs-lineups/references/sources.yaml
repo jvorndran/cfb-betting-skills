@@ -1,0 +1,326 @@
+version: 1
+
+sources:
+  - id: notre-dame-football-media
+    name: Notre Dame Football Media Information
+    categories: [official_game_notes, official_depth_charts]
+    publisher: Notre Dame Athletics
+    authority: official
+    scope: { kind: team, id: notre-dame }
+    access: public
+    links:
+      - label: Football media hub
+        url: https://fightingirish.com/ndfbmedia
+    guidance: >-
+      Open the current-season football media table and follow the game-note, opponent-note,
+      depth-chart, postgame-note, or gamebook link for the matchup being researched.
+    limitations:
+      - Team-produced depth charts and availability notes can change after publication.
+
+  - id: virginia-football-media-center
+    name: Virginia Football Media Center
+    categories: [official_game_notes, official_depth_charts]
+    publisher: Virginia Athletics
+    authority: official
+    scope: { kind: team, id: virginia }
+    access: public
+    links:
+      - label: Football media center
+        url: https://virginiasports.com/virginia-football-media-center
+    guidance: >-
+      Use the current-season matchup rows for Virginia notes, opponent notes, ACC notes, and
+      depth-chart links.
+    limitations:
+      - Team-produced depth charts are projected lineups, not confirmed snap assignments.
+
+  - id: georgia-tech-football-media
+    name: Georgia Tech Football Media Resources
+    categories: [official_game_notes, official_depth_charts]
+    publisher: Georgia Tech Athletics
+    authority: official
+    scope: { kind: team, id: georgia-tech }
+    access: public
+    links:
+      - label: Football archive
+        url: https://ramblinwreck.com/football-archive
+    guidance: >-
+      Use the season sections for game notes and depth charts; ignore schedules, recruiting,
+      statistics-only pages, and general news.
+    limitations:
+      - The archive may link to a season-specific media page after navigation.
+
+  - id: clemson-football-media
+    name: Clemson Football Media Information
+    categories: [official_game_notes]
+    publisher: Clemson Athletics
+    authority: official
+    scope: { kind: team, id: clemson }
+    access: public
+    links:
+      - label: Football media links
+        url: https://clemsontigers.com/football-links
+    guidance: >-
+      Use the media-resources and game-by-game notes sections for current matchup packets.
+    limitations:
+      - Media guides and spring guides on the same page are slower-moving background sources.
+
+  - id: michigan-football-game-notes
+    name: Michigan Football Game Notes
+    categories: [official_game_notes]
+    publisher: Michigan Athletics
+    authority: official
+    scope: { kind: team, id: michigan }
+    access: public
+    links:
+      - label: Football archive
+        url: https://mgoblue.com/sports/2017/6/16/football-archive
+    guidance: >-
+      Select the current season and follow only official football game-note links for the target
+      matchup.
+    limitations:
+      - The archive also contains historical material and unrelated football resources.
+
+  - id: acc-football-availability
+    name: ACC Football Student-Athlete Availability Reporting
+    categories: [official_availability_reports]
+    publisher: Atlantic Coast Conference
+    authority: official
+    scope: { kind: conference, id: acc }
+    access: public_client_rendered
+    links:
+      - label: Current football reports
+        url: https://theacc.com/sports/2025/8/28/availability-reporting-football.aspx
+      - label: Availability policy and status definitions
+        url: https://theacc.com/sports/2025/8/28/availability-reporting.aspx
+    guidance: >-
+      When the table is populated for the current season, pull the latest conference-game report
+      and use the policy page to interpret Available, Probable, Questionable, Out, and Game Time
+      Decision.
+    limitations:
+      - Covers conference games and began with the 2025 season.
+      - The current report table requires client-side rendering.
+      - Do not treat a prior-season table as current availability.
+
+  - id: sec-football-availability
+    name: SEC Football Student-Athlete Availability Reports
+    categories: [official_availability_reports]
+    publisher: Southeastern Conference
+    authority: official
+    scope: { kind: conference, id: sec }
+    access: public_client_rendered
+    links:
+      - label: Current football reports
+        url: https://www.secsports.com/fbreports
+      - label: Report archive
+        url: https://www.secsports.com/fbreports-archive
+    guidance: >-
+      Use the latest timestamped matchup report during the reporting window and consult the archive
+      only for prior games.
+    limitations:
+      - Report cards and archive contents require client-side rendering.
+      - Recheck late updates because player designations can change before kickoff.
+
+  - id: big12-football-availability
+    name: Big 12 Football Player Availability Reporting
+    categories: [official_availability_reports]
+    publisher: Big 12 Conference
+    authority: official
+    scope: { kind: conference, id: big-12 }
+    access: public_client_rendered
+    links:
+      - label: Football availability reports
+        url: https://big12sports.com/sports/2025/8/14/FBreporting.aspx
+    guidance: >-
+      When the page is populated for the current season, use it for the newest conference-game
+      player designations.
+    limitations:
+      - The route is season-dated; verify whether the conference publishes a replacement each year.
+      - Report contents require client-side rendering.
+      - Do not treat a prior-season table as current availability.
+
+  - id: game-on-paper-player-usage
+    name: Game on Paper CFB Player Usage
+    categories: [player_usage]
+    publisher: Game on Paper
+    authority: independent
+    scope: { kind: national }
+    access: public
+    links:
+      - label: College football hub
+        url: https://gameonpaper.com/cfb
+      - label: Passing usage
+        url: https://gameonpaper.com/cfb/players/passing
+      - label: Rushing usage
+        url: https://gameonpaper.com/cfb/players/rushing
+      - label: Receiving usage
+        url: https://gameonpaper.com/cfb/players/receiving
+      - label: Metric glossary
+        url: https://gameonpaper.com/cfb/glossary
+    guidance: >-
+      Select the intended season, then use player and team pages for dropbacks, carries, targets,
+      catches, yards, EPA, and success rate. Derive workload shares against the corresponding team
+      totals when useful.
+    limitations:
+      - These are recorded-play usage measures, not offense, defense, or special-teams snaps.
+      - Receiving targets and target-based metrics can be incomplete when the play record does not
+        identify the intended receiver.
+      - Data come from cfbfastR and can differ from ESPN because of availability or quality.
+      - National leaderboards apply minimum-volume thresholds; use team pages for smaller roles.
+
+  - id: cfbstats-player-usage
+    name: cfbstats.com Player Statistics
+    categories: [player_usage]
+    publisher: cfbstats.com
+    authority: independent
+    scope: { kind: national }
+    access: public
+    links:
+      - label: College football statistics
+        url: https://cfbstats.com
+    guidance: >-
+      Enter the intended season and team roster, then use public player game logs, splits, and
+      situational pages for attempts, receptions, returns, tackles, and other observable workload.
+    limitations:
+      - The public pages do not provide literal snap counts, routes, or receiving targets.
+      - A field named Plays is category-specific workload and must not be interpreted as snaps.
+      - Bulk downloadable packages advertised by the site are commercial; use only ordinary public
+        web pages.
+
+  - id: ncaa-fbs-player-statistics
+    name: NCAA FBS Individual Statistics
+    categories: [player_usage]
+    publisher: NCAA
+    authority: official
+    scope: { kind: national }
+    access: public
+    links:
+      - label: Current FBS statistics
+        url: https://www.ncaa.com/stats/football/fbs
+    guidance: >-
+      Use the individual-statistic category tables to confirm official games played, passing and
+      rushing attempts, receptions, returns, tackles, and other standard production.
+    limitations:
+      - These are national category tables, not complete player snap-count tables.
+      - Some views show only qualifying leaders and omit low-volume players.
+
+  - id: ross-dellenger-yahoo
+    name: Ross Dellenger — Yahoo Sports
+    categories: [beat_reporting]
+    publisher: Yahoo Sports
+    authority: independent
+    scope: { kind: national }
+    access: public
+    links:
+      - label: Author page
+        url: https://sports.yahoo.com/author/ross-dellenger/
+    guidance: >-
+      Use current bylines for national college-football news, governance, conference policy,
+      realignment, playoff developments, and reported personnel movement.
+    limitations:
+      - Role and anonymous article access were verified on 2026-08-04; recheck periodically.
+
+  - id: matt-zenitz-cbs-sports
+    name: Matt Zenitz — CBS Sports
+    categories: [beat_reporting]
+    publisher: CBS Sports
+    authority: independent
+    scope: { kind: national }
+    access: public
+    links:
+      - label: Author page
+        url: https://www.cbssports.com/writers/matt-zenitz
+    guidance: >-
+      Use current college-football bylines for personnel, position battles, practice developments,
+      transfers, depth, player roles, and coaching movement.
+    limitations:
+      - The page also includes NFL reporting; filter to college-football articles.
+      - Role and anonymous article access were verified on 2026-08-04; recheck periodically.
+
+  - id: eleven-warriors-ohio-state
+    name: Eleven Warriors Ohio State Football Beat
+    categories: [beat_reporting]
+    publisher: Eleven Warriors
+    authority: independent
+    scope: { kind: team, id: ohio-state }
+    access: public
+    links:
+      - label: Ohio State football coverage
+        url: https://www.elevenwarriors.com/ohio-state-football
+    guidance: >-
+      Use staff-bylined coverage for practices, depth, player roles, injuries, roster movement,
+      press conferences, matchups, and snap-count reporting.
+    limitations:
+      - Ignore forum posts, user comments, recruiting projections, and opinion-only articles.
+      - Anonymous article access was verified on 2026-08-04; recheck periodically.
+
+  - id: michigan-daily-football-beat
+    name: The Michigan Daily Football Beat
+    categories: [beat_reporting]
+    publisher: The Michigan Daily
+    authority: independent
+    scope: { kind: team, id: michigan }
+    access: public
+    links:
+      - label: Michigan football beat
+        url: https://www.michigandaily.com/sports/football/
+    guidance: >-
+      Use staff-bylined reporting from practices, press conferences, games, roster developments,
+      injuries, depth, and player-role stories.
+    limitations:
+      - Student assignments rotate; use the stable beat page instead of one writer's page.
+      - Separate reported articles from columns and opinion.
+
+  - id: daily-texan-football-beat
+    name: The Daily Texan Football Beat
+    categories: [beat_reporting]
+    publisher: The Daily Texan
+    authority: independent
+    scope: { kind: team, id: texas }
+    access: public
+    links:
+      - label: Texas football beat
+        url: https://thedailytexan.com/category/sports/football
+    guidance: >-
+      Use staff-bylined reporting for practices, player roles, roster and transfer changes,
+      injuries, coaching comments, and matchup preparation.
+    limitations:
+      - Student assignments rotate; use the stable beat page instead of one writer's page.
+      - Separate reported articles from commentary and predictions.
+
+  - id: cbs-sports-college-football-play-by-play
+    name: CBS Sports College Football GameTracker
+    categories: [play_by_play]
+    publisher: CBS Sports
+    authority: independent
+    scope: { kind: national }
+    access: public
+    links:
+      - label: College football scoreboard
+        url: https://www.cbssports.com/college-football/scoreboard/
+    guidance: >-
+      Select the target game, open GameTracker, and use Plays or Full Play By Play for clock, down
+      and distance, play descriptions, scoring events, and drive context.
+    limitations:
+      - GameTracker coverage varies; verify that the target game has a complete play log.
+      - This is a public research webpage, not a documented API or redistribution license.
+      - Play descriptions can be corrected after the live event.
+
+  - id: on3-football-transfer-portal-wire
+    name: On3 College Football Transfer Portal Wire
+    categories: [transactions, transfer_portal]
+    publisher: On3
+    authority: independent
+    scope: { kind: national }
+    access: public
+    links:
+      - label: Current football transfer wire
+        url: https://www.on3.com/transfer-portal/wire/football
+    guidance: >-
+      Use the current-season wire for player-level portal movement, recording the displayed status,
+      date, previous school, and destination. Corroborate consequential moves with an official team
+      announcement.
+    limitations:
+      - On3 is a secondary tracker, not the non-public NCAA transfer portal, so records can lag.
+      - Filter to FBS players and schools; the wire includes programs outside the subdivision.
+      - Expected destinations and prediction percentages are not completed transactions.
+      - Coverage is transfer movement, not every dismissal, retirement, or draft departure.

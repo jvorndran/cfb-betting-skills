@@ -1,4 +1,0 @@
-interface:
-  display_name: "Research CFB Public Web"
-  short_description: "Search governed public CFB sources with Tavily"
-  default_prompt: "Use $research-cfb-public-web to fill a college-football evidence gap from governed public sources with Tavily."
