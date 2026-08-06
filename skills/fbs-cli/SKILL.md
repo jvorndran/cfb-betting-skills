@@ -9,16 +9,17 @@ Use `fbs` as a thin retrieval layer. It mirrors all 71 GET routes in the pinned 
 
 ## First-run setup
 
-A skills.sh install provides this skill's instructions only; it does not install the executable or configure a credential.
+A skills.sh install provides this skill's instructions only; it does not install the executable or configure a credential automatically.
 
-- Run `fbs --version` before retrieval. If it is unavailable, tell the user that Node.js 22.12 or newer is required and ask them to run `npm install --global @jvorndran/fbs-cli`. Do not install it without authorization.
-- CFBD requires an API key. If no credential is configured, direct the user to <https://collegefootballdata.com/key>, then ask them to run `fbs auth` from the project where the skill will run. The prompt is masked and saves the validated key to the working-directory `.env` file.
+- Run `fbs --version` before retrieval. If it is unavailable, install it with `npm install --global @jvorndran/fbs-cli` when the environment permits, then rerun the check. Do not retrieve CFBD data until the version check succeeds.
+- CFBD requires an API key. If no credential is configured, direct the user to <https://collegefootballdata.com/key>, then run or have the user complete `fbs auth` from the project where the skill will run. The prompt is masked and saves the validated key to the working-directory `.env` file.
+- Run `fbs info` as the authenticated readiness check after installation and credential setup. If it fails for any reason, stop and report the setup or provider error; do not fall back to web data or continue with endpoint retrieval.
 - Never ask the user to paste a key into chat or an agent prompt. An existing `CFBD_API_KEY` environment value is also supported and takes precedence over `.env`.
 
 ## Start here
 
 1. Prefer user-supplied structured data. Query CFBD only for a specific unresolved question.
-2. If setup or authentication is needed, read [runtime-contract.md](references/runtime-contract.md). Never ask the user to paste an API key into chat.
+2. If setup or authentication is needed, read [runtime-contract.md](references/runtime-contract.md), install the CLI if necessary, and complete authentication before retrieval. Never ask the user to paste an API key into chat.
 3. Verify `fbs --version` and the executable path before relying on this skill's stable version 1 envelope. If an older global install shadows the source repository, follow [runtime-contract.md](references/runtime-contract.md); do not mix major contracts silently.
 4. Run `fbs <complete leaf path> --help` before guessing a flag. If the leaf command is unclear, read [command-index.md](references/command-index.md).
 5. Set the research `as_of` and cutoff, issue the smallest useful query, and reuse returned game, player, coach, drive, and play IDs.

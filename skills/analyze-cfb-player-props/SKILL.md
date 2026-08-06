@@ -32,7 +32,15 @@ Keep CFBD, sportsbook, and other provider IDs separate. Guard against namesakes,
 
 Read [data-sources.md](references/data-sources.md) when selecting FBS data or deciding whether web research is needed.
 
-If FBS retrieval is useful, run `fbs --version` and the relevant leaf `--help`. If missing, explain that Node.js 22.12 or newer and `npm install --global @jvorndran/fbs-cli` are required. CFBD needs a key configured with `fbs auth` or `CFBD_API_KEY`; never request the key in chat.
+### FBS readiness is a hard gate
+
+This skill cannot run until the FBS CLI is installed, executable, and authenticated:
+
+1. Run `fbs --version`. If it is missing or fails, install it with `npm install --global @jvorndran/fbs-cli`, then rerun the check. If installation or the version check still fails, stop and report the setup failure.
+2. Run `fbs info` as the authenticated CFBD readiness check. If it fails because no credential is configured, run `fbs auth` or configure `CFBD_API_KEY`; never ask the user to paste the key into chat. If `fbs info` still fails for any reason, stop.
+3. Run the relevant leaf `--help` before choosing flags. If the help command fails, stop.
+
+Do not continue with user-supplied or web-only evidence while this gate is failing. If a required FBS command fails later, stop the analysis and report the structured error instead of silently switching sources.
 
 For current information, select relevant entries from the bundled [sources.yaml](references/sources.yaml). Respect source scope, access mode, guidance, and limitations. Broaden to other reputable public sources when the catalog has no current fit. Do not browse for historical fields already answered by suitable structured evidence.
 

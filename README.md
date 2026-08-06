@@ -22,7 +22,7 @@ Install one skill with `--skill`:
 npx skills add jvorndran/cfb-betting-skills --skill analyze-cfb-lines
 ```
 
-The installer downloads agent instructions and bundled references. It does not install the data CLIs.
+The installer downloads agent instructions and bundled references. It does not install the data CLIs automatically; the FBS skill can install `@jvorndran/fbs-cli` when it is missing, then blocks retrieval until the executable and CFBD authentication work.
 
 ### 2. Install the data CLIs
 
