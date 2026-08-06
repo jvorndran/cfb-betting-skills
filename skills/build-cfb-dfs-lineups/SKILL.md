@@ -15,7 +15,7 @@ First determine whether the user wants player/slate analysis or actual lineup co
 - Construct lineups only when the user explicitly asks for lineups, builds, combinations, or optimization.
 - Never upload, enter, or submit a lineup.
 
-Choose only the modules that fit the contest and available inputs. Do not impose a fixed endpoint path, optimizer, source count, output schema, or presentation format.
+Cover the core expert modules below, but choose the order, depth, commands, and construction method that fit the contest and available inputs. Do not impose a fixed endpoint path, optimizer, source count, output schema, or presentation format. Mark a module `not applicable` or `insufficient_evidence` when the contest or evidence cannot support it.
 
 ## Establish provider authority
 
@@ -25,7 +25,7 @@ Treat the provider salary/slate file and published rules as authoritative for:
 - Salaries, positions, eligibility, and slate membership.
 - Scoring, roster slots, salary cap, multipliers, lock, late swap, and contest restrictions.
 
-FBS can enrich football context but cannot override provider-controlled facts. Keep provider and CFBD IDs in separate namespaces.
+FBS can enrich football context but cannot override provider-controlled facts. Keep provider and CFBD IDs in separate namespaces. Tie important evidence to a causal chain: `observed fact -> role/opportunity mechanism -> game-script effect -> fantasy distribution -> salary/ownership decision`.
 
 ## Select evidence
 
@@ -56,6 +56,15 @@ Choose appropriate modules from [workflows.md](references/workflows.md). Separat
 - Contest-strategy judgments.
 
 Assess floor, median, ceiling, volatility, salary efficiency, ownership, leverage, correlation, late-swap flexibility, and failure modes according to the user's contest objective. Do not silently optimize for median projection when the user asked for ceiling, leverage, or diversification.
+
+Every DFS analysis must address these expert questions, even if some answers are limited by the evidence:
+
+- What provider, slate, scoring system, contest type, lock structure, salary rules, and eligibility constraints define the decision?
+- What current role and opportunity regime drives each relevant player's floor and ceiling, and which quarterback, teammate, depth, or availability changes can alter it?
+- Which game scripts create or remove fantasy opportunity, including pace, team scoring, blowout, garbage time, concentrated production, and late-swap paths?
+- Are the football inputs observed, provider- or user-supplied projections, ownership estimates, or transparent assumptions?
+- How do salary, ceiling, ownership, contest payout shape, leverage, correlation, and duplication risk interact?
+- What is the strongest failure mode, shared fragile assumption, or late-news risk, and what would change the player pool or lineup construction?
 
 If the task stops at analysis, return player or strategy conclusions with uncertainties and avoid unsolicited builds.
 

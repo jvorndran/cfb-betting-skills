@@ -1,4 +1,4 @@
 interface:
   display_name: "Analyze and Build CFB DFS"
-  short_description: "Analyze CFB DFS and build on request"
-  default_prompt: "Use $build-cfb-dfs-lineups to analyze this CFB DFS slate, and construct validated lineups only if I explicitly request them."
+  short_description: "Analyze CFB DFS through role, scripts, salary, ownership, and correlation"
+  default_prompt: "Use $build-cfb-dfs-lineups to analyze this CFB DFS slate through provider rules, role, game scripts, salary, ownership, leverage, and correlation; construct validated lineups only if I explicitly request them."

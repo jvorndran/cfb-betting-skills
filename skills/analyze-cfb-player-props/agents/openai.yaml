@@ -1,4 +1,4 @@
 interface:
   display_name: "Analyze CFB Player Props"
-  short_description: "Analyze CFB props through role and price"
-  default_prompt: "Use $analyze-cfb-player-props to evaluate this college-football prop and conclude with play, pass, or insufficient evidence."
+  short_description: "Analyze CFB props through role, matchup, scripts, and price"
+  default_prompt: "Use $analyze-cfb-player-props to evaluate this college-football prop through role regime, opportunity, matchup, game scripts, and price sensitivity, then conclude with play, pass, or insufficient evidence."

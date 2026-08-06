@@ -9,13 +9,14 @@ Treat player props as role and opportunity problems before treating them as effi
 
 ## Use judgment
 
-Choose the evidence and workflow modules that fit the prop. Do not impose a fixed endpoint sequence, source count, output schema, or presentation format.
+Cover the core expert modules below, but choose the order, depth, commands, and presentation that fit the prop. Do not impose a fixed endpoint sequence, source count, output schema, or presentation format. Mark a module `not applicable` or `insufficient_evidence` when the market or available evidence cannot support it.
 
 - Resolve player and market identity before joining data.
 - Prefer user-supplied structured data when it is adequately identified.
 - Use FBS CLI for reproducible historical football data.
 - Use web research for current availability, role, depth, price, and rules that FBS does not supply.
 - Separate opportunity, efficiency, matchup, and game-environment assumptions.
+- Tie important evidence to a causal chain: `observed fact -> role/opportunity mechanism -> game-script effect -> prop distribution -> market price`.
 - Always conclude with `play`, `pass`, or `insufficient_evidence`.
 
 ## Establish the decision
@@ -47,6 +48,16 @@ For current information, select relevant entries from the bundled [sources.yaml]
 ## Analyze
 
 Choose appropriate modules from [workflows.md](references/workflows.md). Read [prop-analysis.md](references/prop-analysis.md) when defining samples, scenarios, probability, or a price threshold.
+
+Every prop analysis must address these expert questions, even if some answers are limited by the evidence:
+
+- What is the player's current role regime, and which personnel, quarterback, coordinator, or depth changes define it?
+- What team opportunities and player shares drive this prop, and are attempts, carries, targets, routes, snaps, red-zone work, and returns being kept distinct?
+- Which matchup mechanics matter most, including trenches, pressure/coverage, defensive funnels, run fits, explosive-play prevention, and scoring-area usage?
+- How do neutral, leading, trailing, blowout, and high- or low-pace game scripts change the player's volume and efficiency?
+- Which outcomes are stable opportunity versus touchdowns, long plays, garbage-time amplification, turnovers, or other variance?
+- What market or narrative bias may affect a star, touchdown, recent-box-score, or popular-player prop, and is that evidence observable rather than assumed?
+- What low/base/high scenarios, counterargument, falsifier, and exact line/price threshold determine the conclusion?
 
 Distinguish:
 
