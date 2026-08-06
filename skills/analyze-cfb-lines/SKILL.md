@@ -9,13 +9,14 @@ Evaluate the market the user actually names. Keep the game, selection, number, a
 
 ## Use judgment
 
-Choose only the analysis modules that can change the conclusion. Do not force a fixed endpoint ladder, source count, report template, or presentation format.
+Cover the core expert modules below, but choose their order, depth, commands, and presentation. Do not force a fixed endpoint ladder, source count, report template, or presentation format. Mark a module `not applicable` or `insufficient_evidence` when the market or available evidence cannot support it.
 
 - Prefer user-supplied structured data when it is sufficiently identified and current.
 - Use FBS CLI for reproducible CFBD history and football context.
 - Use Kalshi CLI for compatible public Kalshi contracts; its supported endpoints require no key.
 - Use public-web research for material current or qualitative gaps, not to duplicate structured data.
 - Treat correlated metrics from the same games and plays as related evidence rather than independent confirmation.
+- Tie important evidence to a causal chain: `observed fact -> football mechanism -> game-script effect -> market impact`.
 - Always finish with `play`, `pass`, or `insufficient_evidence`. A pass is a useful conclusion.
 
 ## Establish the decision
@@ -50,6 +51,15 @@ When current information is material, consult the bundled [sources.yaml](referen
 ## Analyze
 
 Use the relevant modules from [workflows.md](references/workflows.md). Read [market-analysis.md](references/market-analysis.md) for odds conversion, no-vig calculations, movement, fair ranges, and binary-contract semantics.
+
+Every Lines analysis must address these expert questions, even if some answers are limited by the evidence:
+
+- What baseline team-quality and opponent-adjusted expectation does the market imply, and where could it be wrong?
+- Which matchup mechanics matter most, including offensive-line versus defensive-front play, quarterback pressure/coverage interactions, explosiveness, early-down success, and finishing drives?
+- What are the plausible close-game, favorite-leading, and underdog-leading scripts, and how would pace, play calling, drive volume, clock, garbage time, and fourth-down decisions change the spread, total, or moneyline distribution?
+- Which current personnel, continuity, coaching, scheme, venue, travel, rest, and weather facts can alter those scripts?
+- What market-psychology or public-bias evidence is observable (or unavailable), including brand/ranking/recency narratives, ticket or handle splits, opener/current movement, reverse movement, stale numbers, liquidity, and cross-provider disagreement?
+- What assumptions, variance sources, counterarguments, falsifiers, and number/price thresholds determine the conclusion?
 
 Build a causal case rather than tallying metrics. Distinguish:
 

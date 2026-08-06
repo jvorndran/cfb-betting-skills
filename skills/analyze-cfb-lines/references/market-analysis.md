@@ -35,6 +35,23 @@ Require at least two timestamped observations of the same market definition. Sep
 
 Movement alone does not establish public or professional sentiment, informed action, or predictive value.
 
+## Market psychology and public bias
+
+Always assess whether observable market context could be distorting the quote, but do not assume that a popular side is wrong.
+
+- Record the source, provider, market definition, timestamp, and sample for ticket/handle splits, opener/current/consensus numbers, price movement, limits, liquidity, or cross-provider disagreement.
+- Treat brand, rankings, recent scores, unbeaten records, rivalry, primetime, conference narratives, and headline injuries as possible demand or attention effects—not as proof of a shaded line.
+- Treat reverse line movement, steam, or a contrarian signal as a hypothesis. Test whether the number and price moved in compatible ways and whether low liquidity, limits, a stale screen, a new contract, or changed rules provide a simpler explanation.
+- Never label action “sharp,” “public,” or “informed” from movement alone. If the relevant splits or movement history are unavailable, report market psychology as unobserved.
+
+For Kalshi, analyze the contract's bid/ask, depth, trades, candles, fees, close time, and resolution source separately from sportsbook sentiment. A last trade is not automatically an executable price.
+
+## Scenario-weighted value
+
+Use a small set of plausible game scripts when a single projection hides material uncertainty. For each script, state its probability range, football mechanism, margin/total implications, and the assumptions that would make it more or less likely. Prefer a fair range or distribution to a point estimate.
+
+Stress the assumptions with the largest effect on value—quarterback or trench availability, pace, explosive rate, finishing drives, weather, turnover variance, and score-state behavior. State the strongest competing explanation, the falsifier, and the exact number/price threshold where the play becomes a pass.
+
 ## Mispricing hypothesis
 
 State:
